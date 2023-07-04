@@ -9,10 +9,10 @@ import Spinner from "./components/Spinner/Spinner";
 import { v4 as uuidv4 } from "uuid";
 
 const config = {
-  region: "us-east-1",
+  region: process.env.REACT_APP_REGION,
   credentials: {
-    accessKeyId: "AKIAUSWUWNCSAWZWC242",
-    secretAccessKey: "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",
+    accessKeyId: process.env.REACT_APP_ACCESS_KEY_ID,
+    secretAccessKey: process.env.REACT_APP_SECERET_ACCESS_KEY,
   },
 };
 
@@ -34,9 +34,9 @@ function App() {
     if (userInput.trim() === "") return;
     setLoading(true);
     const params = {
-      botId: "XXXPTKFRT7",
-      botAliasId: "TSTALIASID",
-      localeId: "en_US",
+      botId: process.env.REACT_APP_BOT_ID,
+      botAliasId: process.env.REACT_APP_BOT_ALIAS_ID,
+      localeId: process.env.REACT_APP_LOCALE_ID,
       sessionId: sessionId,
       text: userInput,
     };
